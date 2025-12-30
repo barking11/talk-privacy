@@ -47,6 +47,13 @@ h3 {
 	margin-bottom: 0;
 }
 
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
 .page-title {
 	font-size: 2.5rem;
 	font-weight: 700;
@@ -77,7 +84,7 @@ h3 {
 }
 
 .callout {
-	border-radius: 3px;
+	border-radius: 10px;
 	padding: 1rem;
 }
 
@@ -127,6 +134,11 @@ img {
 
 .collection-content {
 	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
 }
 
 .column-list {
@@ -284,7 +296,7 @@ ol > li {
 }
 
 .page-description {
-    margin-bottom: 2em;
+	margin-bottom: 2em;
 }
 
 .simple-table {
@@ -315,7 +327,9 @@ time {
 }
 
 .icon {
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	max-width: 1.2em;
 	max-height: 1.2em;
 	text-decoration: none;
@@ -325,6 +339,21 @@ time {
 
 img.icon {
 	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
 }
 
 .user-icon {
@@ -430,10 +459,14 @@ code {
 }
 
 blockquote {
-	font-size: 1.25em;
+	font-size: 1em;
 	margin: 1em 0;
 	padding-left: 1em;
 	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
 }
 
 .bookmark {
@@ -488,14 +521,14 @@ blockquote {
 	margin-top: 0.25em;
 }
 
-.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
 .code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
 .serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
 .mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
-.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
-.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
-.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
-.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
 .pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
 .pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
 .pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
@@ -509,151 +542,155 @@ blockquote {
 .pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
 .pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
 .highlight-default {
-	color: rgba(55, 53, 47, 1);
+	color: rgba(44, 44, 43, 1);
 }
 .highlight-gray {
-	color: rgba(120, 119, 116, 1);
-	fill: rgba(120, 119, 116, 1);
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
 }
 .highlight-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
 }
 .highlight-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
 }
 .highlight-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
 }
 .highlight-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
 }
 .highlight-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
 }
 .highlight-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
 }
 .highlight-pink {
 	color: rgba(193, 76, 138, 1);
 	fill: rgba(193, 76, 138, 1);
 }
 .highlight-red {
-	color: rgba(212, 76, 71, 1);
-	fill: rgba(212, 76, 71, 1);
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
 }
 .highlight-gray_background {
-	background: rgba(241, 241, 239, 1);
+	background: rgba(42, 28, 0, 0.07);
 }
 .highlight-brown_background {
-	background: rgba(244, 238, 238, 1);
+	background: rgba(139, 46, 0, 0.086);
 }
 .highlight-orange_background {
-	background: rgba(251, 236, 221, 1);
+	background: rgba(224, 101, 1, 0.129);
 }
 .highlight-yellow_background {
-	background: rgba(251, 243, 219, 1);
+	background: rgba(211, 168, 0, 0.137);
 }
 .highlight-teal_background {
-	background: rgba(237, 243, 236, 1);
+	background: rgba(0, 100, 45, 0.09);
 }
 .highlight-blue_background {
-	background: rgba(231, 243, 248, 1);
+	background: rgba(0, 124, 215, 0.094);
 }
 .highlight-purple_background {
-	background: rgba(244, 240, 247, 0.8);
+	background: rgba(102, 0, 178, 0.078);
 }
 .highlight-pink_background {
-	background: rgba(249, 238, 243, 0.8);
+	background: rgba(197, 0, 93, 0.086);
 }
 .highlight-red_background {
-	background: rgba(253, 235, 236, 1);
+	background: rgba(223, 22, 0, 0.094);
 }
 .block-color-default {
 	color: inherit;
 	fill: inherit;
 }
 .block-color-gray {
-	color: rgba(120, 119, 116, 1);
-	fill: rgba(120, 119, 116, 1);
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
 }
 .block-color-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
 }
 .block-color-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
 }
 .block-color-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
 }
 .block-color-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
 }
 .block-color-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
 }
 .block-color-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
 }
 .block-color-pink {
 	color: rgba(193, 76, 138, 1);
 	fill: rgba(193, 76, 138, 1);
 }
 .block-color-red {
-	color: rgba(212, 76, 71, 1);
-	fill: rgba(212, 76, 71, 1);
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
 }
 .block-color-gray_background {
-	background: rgba(241, 241, 239, 1);
+	background: rgba(240, 239, 237, 1);
 }
 .block-color-brown_background {
-	background: rgba(244, 238, 238, 1);
+	background: rgba(245, 237, 233, 1);
 }
 .block-color-orange_background {
-	background: rgba(251, 236, 221, 1);
+	background: rgba(251, 235, 222, 1);
 }
 .block-color-yellow_background {
-	background: rgba(251, 243, 219, 1);
+	background: rgba(249, 243, 220, 1);
 }
 .block-color-teal_background {
-	background: rgba(237, 243, 236, 1);
+	background: rgba(232, 241, 236, 1);
 }
 .block-color-blue_background {
-	background: rgba(231, 243, 248, 1);
+	background: rgba(229, 242, 252, 1);
 }
 .block-color-purple_background {
-	background: rgba(244, 240, 247, 0.8);
+	background: rgba(243, 235, 249, 1);
 }
 .block-color-pink_background {
-	background: rgba(249, 238, 243, 0.8);
+	background: rgba(250, 233, 241, 1);
 }
 .block-color-red_background {
-	background: rgba(253, 235, 236, 1);
+	background: rgba(252, 233, 231, 1);
 }
-.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
-.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
-.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
-.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
-.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
-.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
-.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
-.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
-.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
-.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
-.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
-.select-value-color-pageGlass { background-color: undefined; }
-.select-value-color-washGlass { background-color: undefined; }
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
 
 .checkbox {
 	display: inline-flex;
@@ -673,4 +710,4 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="d312a98f-802f-4f60-a66e-17fe05ae1927" class="page sans"><header><h1 class="page-title">隐私政策</h1><p class="page-description"></p></header><div class="page-body"><p id="c4649889-8c07-42c1-8040-1eb91c9f83c4" class="">本隐私政策（简称本政策）于2023年03月15日起发布并生效，于2023年04月10日最新修订，本政策由Talk短剧app发布（以下简称“我们”）与用户（又称“您”）就客户端产品Talk短剧（以下简称“本产品”）的隐私保护相关事项所订立的有效合约。您通过点击确认本协议或以其他方式选择接受本协议，即表示您与我们达成协议并同意接受本政策的全部以下约定内容。</p><p id="d8f00577-3f08-46d1-bbf5-2692762c3173" class="">【Talk短剧app】系本产品的登记著作权人，依法享有本产品的著作权。</p><p id="648cf422-711d-4a83-9773-58b0ab1d29be" class="">本产品由Talk短剧app运营向您提供服务并对您依法享有权利、履行义务、承担法律责任。</p><p id="abdc6832-68fa-4888-a488-bceb62035490" class="">本政策将帮助您了解以下内容：</p><p id="f38fcb6e-acca-4026-9fbc-e30db9e94100" class="">1、我们如何收集和使用您的个人信息</p><p id="e0b003e4-eb90-4b57-ab66-8b462bac693f" class="">2、我们如何使用Cookie和同类技术</p><p id="7ee11842-826f-4189-8a17-4521b6c25afe" class="">3、我们如何共享、转让、公开披露您的个人信息</p><p id="bd3e6e20-3f90-4fee-8fdd-6e81afc0e3ed" class="">4、我们如何保护您的个人信息</p><p id="e5dc19f1-bd2d-4a25-b685-8a7cb2cc8997" class="">5、您的权利</p><p id="7cfaad7e-4301-4aa6-8392-9d55e7bc1ef8" class="">6、我们如何处理儿童的个人信息</p><p id="082d9fd7-db39-4d40-972d-f63d13c8806b" class="">7、您的个人信息如何在全球范围转移</p><p id="b9512151-946c-4b01-b5a8-cf43e91fd8ae" class="">8、本政策如何更新</p><p id="22e02696-6f41-4e88-b8a2-11a0e7bb7559" class="">9、本政策的适用</p><p id="db4f65f4-34d2-4427-be64-d6da0ce25102" class="">10、争议解决</p><p id="31b83d07-5713-4388-8771-5928e701ab0e" class="">11、联系我们</p><p id="48c1c3f3-84a8-4807-8ba1-ec7b758774f4" class="">本产品登记著作权人非常重视个人信息的保护。您在使用我们的产品或服务时，我们可能会收集和使用您的相关信息。一旦您选择使用我们的产品或服务，即表示您认可并接受本条款现有内容及其可能随时更新的内容。如果您不同意，应当终止使用本产品的服务。请您在使用我们的产品前，仔细阅读并了解本《隐私政策》。</p><p id="b5ae4d78-4ac2-4567-b42c-391f32d8f254" class="">一、我们如何收集和使用您的个人信息</p><p id="8c7c4765-8036-4484-9b5e-f90989c0ef67" class="">个人信息是指以电子或者其他方式记录的能够单独或者与其他信息结合识别特定自然人身份或者反映特定自然人活动情况的各种信息。</p><p id="ac355ed2-32cf-4c10-899d-722802a09cf9" class="">本产品登记著作权人仅会出于本政策所述的以下目的、方式、范围在为您提供服务时收集和使用您的个人信息：</p><p id="59c28107-003c-4d3b-8b3b-4918713bbada" class="">1、应用功能一：成为注册用户</p><p id="27178d74-b9cf-4354-975b-65c192596444" class="">您在申请成为本产品注册用户时，您需提供以下信息：您的设备信息。</p><p id="204ab722-c5c2-4f0f-89ca-131dfb95b350" class="">您提供的上述信息，授权我们在为您使用本服务期间持续使用。在您注销账号时，我们将停止使用并删除上述信息。</p><p id="5328c66a-4028-40ca-9533-830f6f5014cd" class="">2、应用功能二：应用内展示操作日志</p><p id="8040ac8d-4317-4ff8-978e-f4bf616d520c" class="">您使用我们服务时，本产品会记录您的操作日志，包括浏览点击记录、添加追剧、看过的剧集、参与过的活动。您提供的上述信息，授权我们在为您使用本服务期间持续使用。在您注销账号时，我们将停止使用并删除上述信息。</p><p id="48a9927f-8ed4-4bfb-aa2a-666084803ea7" class="">3、应用功能三：订购与支付</p><p id="d8169ea2-53d9-4170-9689-3e856ec9e57b" class="">您使用本产品时，订购VIP会员、剧集付费服务时产生的记录，包括订购记录、消费记录，这些信息会存储于我们的服务器中。以上信息为产品功能必须的信息，若您不同意我们记录前述信息，我们将无法为您提供剧集购买服务。</p><p id="43ae2853-e421-4bc6-9711-2e7c39561c1c" class="">4、应用功能四：安全服务</p><p id="55a4c342-3c6a-41ce-bbe0-5b726f7a8e83" class="">为向您提供安全稳定的服务、保障您的账户财产安全、预防冒名登陆，为了正常使用本产品功能及服务，当您使用我们的产品或服务时，我们可能会自动记录某些信息，包括：设备或软件信息：您的移动设备、网页浏览器或用于接入我们服务的其他程序所提供的配置信息、您的IP地址、移动设备所用的软件版本信息、设备识别码（IMEI、MAC地址）、设备唯一标识（AndroidID、OAID）信息、设备序列号。若您不同意我们记录前述信息，可能无法完成风控流程而无法使用我们的产品。我们还可能会自动记录您是否安装支付宝APP，若您不同意我们记录前述信息，将不会影响您正常使用本产品。</p><p id="1abf99dd-3af6-4c1f-a1e5-24f588fc281b" class="">5、应用功能五：权限启用</p><p id="c4787496-d0be-4e1a-bcb3-b48e2e69afac" class="">我们承诺决不超范围、超频次搜集您的个人信息，决不搜集与使用本产品服务非必需或无合理应用场景的信息。</p><p id="35f3d845-60fc-479e-85c1-53142a8043cd" class="">您在使用本产品时，为提供给您服务之目的，本产品可能在您使用该应用某些场景下向您申请终端设备的以下权限，当然您可以拒绝开启以下权限，或在手机的设置中关闭本产品的以下权限，关闭以下权限不会影响您对本产品其他功能的使用：</p><p id="ca68e4f3-20fa-43ff-9ec4-e07533510d2d" class="">访问电话：通过获取您的电话状态权限我们记录您的设备识别码（即IMEI或IMSI码）进行匿名化处理，用于统计及安全校验；</p><p id="088218d4-de20-4bb1-8700-ea098b217d0d" class="">访问本地存储：通过开启本地存储权限，将本产品内的剧集下载到您的手机存储；</p><p id="b1c182e9-06ae-4bac-850c-c91c16ec2ff4" class="">访问照片：您可以直接选择手机内的照片或图片进行上传或与客服沟通时提供证明；</p><p id="a74958d4-3e30-4c70-9131-b42230b40c7c" class="">访问您设备上的媒体内容和文件：用于读写剧集封面、活动图片的缓存，提升应用使用流畅度。</p><p id="d69f177c-04bc-4d9f-b3b5-d212046c798d" class="">开启无线数据：您可以通过连接无线网络或蜂窝网络来实现本产品需要的联网功能；</p><p id="2c79d212-26e4-4a5c-829c-2c68cb1ae16e" class="">访问安装程序列表：通过获取您的安装程序列表我们可以确认您是否安装了我们所推广的产品，以便我们及时向您发放相应奖励。</p><p id="9800f1ef-91cb-465f-b7ce-5395b9403f99" class="">使用剪切板：您可以复制并粘贴客服电话，也可以选择不使用剪切板权限。</p><p id="cb97dddb-5276-4d5c-b2e8-5065936f31c0" class="">为使用词典、百科、语音朗读之目的获取设备网络权限；</p><p id="c87732ec-885b-4c1c-bb4a-3ede0d3adb59" class="">二、我们如何使用Cookie和同类技术</p><p id="4cfc1f4e-9311-4535-ab0b-5aeb0532d0f4" class="">Cookie和同类技术是互联网中的通用常用技术。为确保本平台正常运转、使您获得更轻松的访问体验，我们可能会在您的移动设备上存储名为Cookie的小数据文件。Cookie通常包含标识符、站点名称以及一些号码和字符。借助于Cookie我们将记录您的登陆信息及在本产品中的操作信息，以便我们存储您的使用习惯，并帮助判断您的账户安全状态，以为您提供更轻松的用户体验和服务。</p><p id="8defc9db-b2ac-4964-8e3c-346ff04f7b0f" class="">我们不会将Cookie用于本政策所述目的之外的任何用途。您可根据自己的偏好管理或停用Cookie。有关详情，请参AboutCookies.org。如果停用Cookie，您有可能无法享受最佳的服务体验，我们的推荐内容与您的相关性也会降低。</p><p id="e208584e-6c11-4a77-a259-d06a29c86522" class="">三、我们如何共享、转让、公开披露您的个人信息</p><p id="a08d5f00-4406-4e95-b961-24effe99f40b" class="">(一)共享</p><p id="fa799582-14b8-4f0b-83cc-4910a67c284b" class="">我们不会将您的个人信息向本产品登记著作权人及关联公司以外的任何公司、组织和个人共享，但以下情况除外：</p><p id="0786c7db-1cdb-45c5-a7a6-8e295cf5a77b" class="">1、在获取明确同意的情况下共享：在获得您的明确同意后，我们会与其他方共享您的个人信息。</p><p id="a033efd3-c34b-402d-8f5d-000130140233" class="">2、我们可能会根据法律法规规定，或按政府主管部门的强制性规定，对外共享您的个人信息。</p><p id="810167d5-a614-46c5-a280-f67e4c0ec049" class="">3、与授权合作伙伴共享：仅为实现本政策中声明的目的，我们的某些服务将由授权合作伙伴提供。我们可能会与合作伙伴共享您的某些个人信息，以提供更好的客户服务和用户体验。我们仅会出于合法、正当、必要、特定、明确的目的共享您的个人信息，并且只会共享提供服务所必要的个人信息。我们的合作伙伴无权将共享的个人信息用于任何其他用途。</p><p id="51437baf-05c7-4692-baca-c765545e84b7" class="">目前，我们的授权合作伙伴包括以下几大类型：</p><p id="2e45001d-db41-4c9e-ad32-16fa301cf9b2" class="">1）供应商、服务提供商和第三方代理及其他合作伙伴。我们将信息发送给在全球范围内支持我们业务的供应商、服务提供商、第三方代理和其他合作伙伴，这些支持包括提供技术基础设施服务、分析我们服务的使用方式、衡量服务的有效性、提供客户服务、支付便利或进行学术研究和调查。在经您事先明确同意后，我们可能会在采取加密、匿名化处理手段后与第三方代理分享您的消费记录、订阅记录，充值记录、订单记录、已删除观看记录、消耗活动消费记录，若您不同意我们分享前述信息，将不会影响您正常使用本产品。</p><p id="9dc7402c-eb77-4b47-9f96-c9d40ed144b6" class="">2）分析服务类的数据服务商：为了向您提供更优质的服务，我们与包括友盟+在内第三方数据服务商合作预测您的特征偏好。为了保障您的数据安全，该种预测以指数分值的方式提供，数据分析在严格去标识化安全措施前提下进行，不会泄露您的个人信息。</p><p id="75ce43c9-8af7-43bc-a8d3-7a5bab5fa501" class="">3）广告、分析服务类的授权合作伙伴。除非得到您的许可，否则我们不会将您的个人身份信息(指可以识别您身份的信息，通过这些信息可以联系到您或识别您的身份)与提供广告、分析服务的合作伙伴分享。但我们可能会将您的以下个人信息在匿名化处理后与广告、分析服务类的授权合作伙伴共享，包括：网路身份识别信息（IP地址）、软件版本号、软件包名、软件安装列表、设备连接信息（电信运营商、网络环境）、设备属性信息（设备产商、设备型号、操作系统版本、IMEI、OAID、IMSI、传感器、设备序列号），以帮助其在不识别您的个人的前提下提升广告有效触达率。</p><p id="ff4936d6-bc29-4a61-a021-6215163db560" class="">第三方SDK接入服务所需开通的权限。我们的产品和服务可能包括第三方的产品和服务，以及第三方网站的链接。当您使用这些产品或服务时，也可能收集您的信息，经用户已同意授权后，会向第三方发送个人信息，第三方身份变更时，会以弹窗方式再次征得用户同意，我们向第三方共享的个人信息，目前我们接入的第三方SDK列明如下：</p><p id="46867234-2fd2-457e-97ea-478888d0308b" class="">SDK名称 场景描述 个人信息字段 隐私政策链接 包名 第三方机构名称</p><p id="0b5b14bb-38b3-4a56-84c9-148a1c350705" class="">优量汇 广告投放 访问互联网、获取手机状态（Android10以下获取手机IMEI的权限）、OAID、AndroidID、读写外部存储设备、获取手机wifi和网络状态、WIFI的SSID名称、安装应用、位置信息、加速度传感器、陀螺仪传感器、重力传感器，访问程序安装列表权限；内嵌第三方SDK：MMA 中国广告监测通用SDK（设备硬件信息：硬件类型（机型）、屏幕尺寸、IMEI、MAC、AAID、OAID；设备系统信息：操作系统类型、操作系统版本；设备网络信息：WIFI信息（名称、BSSID；设备定位信息：经纬度） https://www.tencent.com/zh-cn/privacy-policy.html com.qq.e 腾讯科技（北京）有限公司</p><p id="dd834318-831a-40b8-934b-b949060bb562" class="">穿山甲 广告投放 访问互联网、获取手机状态（Android10以下获取手机IMEI的权限）、OAID、AndroidID、读写外部存储设备、获取手机wifi和网络状态、WIFI的SSID名称、安装应用、位置信息、加速度传感器、陀螺仪传感器、重力传感器，访问程序安装列表权限；内嵌第三方SDK：MMA 中国广告监测通用SDK（设备硬件信息：硬件类型（机型）、屏幕尺寸、IMEI、MAC、AAID、OAID；设备系统信息：操作系统类型、操作系统版本；设备网络信息：WIFI信息（名称、BSSID；设备定位信息：经纬度） <a href="https://www.csjplatform.com/supportcenter/5374">https://www.csjplatform.com/supportcenter/5374</a></p><p id="7c023d65-3eb9-4dc4-8b2e-4098d9b58d2a" class="">(二)转让</p><p id="329310ff-c841-4cae-95b3-6882c6a224b3" class="">我们不会将您的个人信息转让给任何公司、组织和个人，但以下情况除外：</p><p id="fc6ab200-53fd-4635-b70c-4fa92ce10560" class="">1、在获取明确同意的情况下转让：获得您的明确同意后，我们会向其他方转让您的个人信息；</p><p id="ebcf9541-3b4a-43ef-9875-8787cf8cca21" class="">2、在涉及合并、收购或破产清算时，若涉及到个人信息转让，我们会在要求新的持有您个人信息的公司、组织继续受此隐私政策的约束，否则我们将要求该公司、组织重新向您征求授权同意。</p><p id="1409a304-3aaa-4087-9b2a-72ab23ebd8ca" class="">(三)公开披露</p><p id="301ee2c8-2bba-4d75-a885-ceda4bbfea4a" class="">我们仅会在以下情况下，公开披露您的个人信息：</p><p id="f8dede23-dc7f-433a-98df-7be4c2a916a7" class="">1、获得您明确同意后；</p><p id="76b3aee3-4c37-4382-a12b-f0b68d5aaa14" class="">2、基于法律的披露：在法律、法律程序、诉讼或政府主管部门强制性要求的情况下，我们可能会公开披露您的个人信息。</p><p id="16a79bf7-1c94-435a-b1b0-1805cc740e98" class="">(四)对外共享可能涉及的个人信息类型：设备识别码、产品版本信息；对外公开披露可能涉及的个人信息类型：观看剧集、观看时长。</p><p id="ebdf8a2d-e7dd-42f6-96ee-44cf34531d36" class="">我们已知晓对外共享、转让、公开披露个人信息所承担的相应法律责任，并将采取合理措施保障个人信息安全。</p><p id="fda2dbc1-a0fe-43fa-b4a0-33b3c7edb0b0" class="">四、我们如何保护和保存您的个人信息</p><p id="18001180-674f-41d2-aa76-f41ac4055060" class="">（一）技术保护措施</p><p id="5013979f-0602-43f3-8f95-1e2253c85b63" class="">我们非常重视您个人信息的安全，将努力采取各种符合业界标准的合理的安全措施来保护您的信息，使您的信息不会被泄漏、毁损或者丢失，包括但不限于SSL、隐私信息加密存储、数据中心的访问控制。我们会使用加密技术提高个人信息的安全性；我们会使用受信赖的保护机制防止个人信息遭到恶意攻击；我们会部署访问控制机制，尽力确保只有授权人员才可访问个人信息。</p><p id="9ee308a9-0a6b-4261-8b80-fd334a423613" class="">（二）安全管理体系</p><p id="0325ef35-b0f3-4680-b0bb-a6221d225fbc" class="">我们有行业先进的以数据为核心，围绕数据生命周期进行的数据安全管理体系，从组织建设、制度设计、人员管理、产品技术、个人信息安全影响评估方面多维度提升整个系统的安全性。</p><p id="a69cea9b-b8cf-4d89-9b2e-ca2b25b9f7e4" class="">我们对可能接触到您的信息的员工或外包人员也采取了严格管理，包括但不限于根据岗位的不同采取不同的权限控制，与他们签署保密协议，监控他们的操作情况措施。</p><p id="2f37e063-7238-4602-b190-fdbe9ec4747c" class="">（三）账号保护</p><p id="3d99faad-baf7-45ef-a1f1-a54d01053efe" class="">您的账户均有安全保护功能，请妥善保管您的账户及密码信息。如果您发现账号被盗用或个人信息泄露，请及时联系我们，以便我们采取相应措施。</p><p id="26dc0b15-eb77-47f7-924e-e61a158d8ddf" class="">（四）信息安全事件处理</p><p id="7ea145f4-d840-419e-a003-f820cec1de7c" class="">尽管有前述安全措施，但同时也请您理解在信息网络上不存在“完善的安全措施”。</p><p id="c893d2fe-f401-4cc0-a210-3012d640875f" class="">若不幸发生个人信息安全事件，我们将按照法律法规的要求向您告知：安全事件的基本情况和可能的影响、我们已采取或将要采取的处置措施、您可自主防范和降低风险的建议、对您的补救措施。事件相关情况我们将以电话、通知的方式告知您，难以逐一告知个人信息主体时，我们会采取合理、有效的方式发布公告。同时，我们还将按照监管部门要求，上报个人信息安全事件的处置情况。</p><p id="e5b9e13a-2cc4-4b00-a66c-409eb15e372b" class="">（五）保存期限</p><p id="900b3a19-9adf-42fc-af7e-decb1b46acf9" class="">我们仅在中国大陆地区存放您的个人信息。我们会采取一切合理可行的措施，确保未收集无关的个人信息。我们只会在达成本政策所述目的所需的且法律规定的最短期限内保留您的个人信息，除非需要延长保留期或受到法律的允许。</p><p id="183ede5d-5b2d-4bd4-b1c0-ed4c54a2e336" class="">在您的个人信息超出保留期间后，我们会根据法律法规的要求删除您的个人信息、或使其匿名化处理。</p><p id="407b1378-2d79-4319-92a9-7f49f5221f37" class="">五、您的权利</p><p id="29fd111b-8139-486a-81a1-c7f86b452115" class="">按照中国相关的法律、法规、标准，我们保障您对自己的个人信息行使以下权利：</p><p id="84d974c2-4105-4014-ae09-a2e6ce44a74a" class="">(一)访问您的个人信息</p><p id="65e18362-9797-48d2-91fe-7fa9e41a7f92" class="">您有权通过用户中心自行访问您的个人信息，可参见（六）我们如何响应您的请求，法律法规规定的例外情况除外</p><p id="895ec1ec-40f4-41b5-8b6d-ab283ac6a223" class="">(二)更正您的个人信息</p><p id="04e840c4-eec0-4049-9d99-6d33fdc9774c" class="">当您发现我们处理的关于您的个人信息有错误时，您有权要求我们做出更正。如何更正个人信息，可参见（六）我们如何响应您的请求。</p><p id="7b2dfbde-d148-46c9-95a4-f6fe9c6d538f" class="">(三)删除您的个人信息 在下述情形中，您可以向我们提出删除个人信息的请求：</p><p id="3e9c6348-8d9f-4098-8a51-352e31b93c51" class="">1、我们处理个人信息的行为违反法律法规；</p><p id="760700be-c4ac-4f6c-91c9-2bb74d549b92" class="">2、我们收集、使用您的个人信息，却未征得您的同意；</p><p id="3d0f347a-d0cf-4259-9657-4acc28f85f5b" class="">3、我们处理个人信息的行为违反了与您的约定；</p><p id="bfd27017-8b93-4434-a145-30f1ee7eebd4" class="">4、您不再使用我们的产品或服务，或您注销了账号；</p><p id="8a36f641-5196-4de1-86cc-83225703e8ef" class="">5、我们不再为您提供产品或服务。</p><p id="f004b50a-fb03-48aa-998d-e2b3ac95b5d4" class="">如何删除个人信息，可参见（六）我们如何响应您的请求，若我们决定遵循您的请求，我们还将同时通知从我们获得您的个人信息的实体要求其及时删除，除非法律法规另有规定，或这些实体获得您的独立授权。</p><p id="1f236f35-e0e4-429c-b2a8-1957c15b1f97" class="">当您从我们的服务中删除信息后，我们可能不会立即在备份系统中删除相应的信息，但会在备份更新时删除这些信息。</p><p id="516c75e0-3b71-47df-bc89-d53d3f1e3b8b" class="">(四)撤回同意、关闭使用功能</p><p id="ed159a1c-ded2-4615-863d-337d0cfb2820" class="">您可以通过关闭设备功能改变您授权我们继续收集个人信息的范围或撤回您的授权。您还可以通过注销账户的方式，撤回我们继续收集您个人信息的全部授权。如何撤回同意、关闭使用功能，可参见（六）我们如何响应您的请求</p><p id="213abc12-044b-4bdb-96a2-1254eb4ef6fb" class="">(五)注销账户</p><p id="b7de92eb-e31d-4a9f-b86d-ec711d96b85b" class="">您可以在“我的”-“系统设置”-“注销账号”中进行注销账户操作。您随时可注销此前注册的账户，详见《注销须知》。</p><p id="fdb84cad-312f-4a2a-af04-33b0a51ad578" class="">在注销账户之后，我们将停止为您提供产品或服务，并删除您的个人信息，法律法规另有规定的除外。</p><p id="e3dc7eae-da72-42f6-a9bc-2369adce2c87" class="">在以下情形中，按照法律法规要求，我们将无法遵循您的个人信息删除请求：</p><p id="25ce675e-eaee-4c8b-ad7d-1a610d7db1dd" class="">1、与国家安全、国防安全直接相关的；</p><p id="d7f80d8d-20fb-4106-a20a-29219107c123" class="">2、与公共安全、公共卫生、重大公共利益直接相关的；</p><p id="dc60ab3a-a03c-48c1-b537-c45720fece7a" class="">3、与犯罪侦查、起诉、审判和判决执行直接相关的；</p><p id="9b06b08c-4032-4da4-87d9-fce1a6265c8a" class="">4、有充分证据表明您存在主观恶意或滥用权利的；</p><p id="f1454e79-0a84-4f43-859d-8b8afc9d8a38" class="">5、响应您的请求将导致您或其他个人、组织的合法权益受到严重损害的；</p><p id="a081c793-5229-4017-b11f-a4d55378f09a" class="">6、涉及商业秘密的。</p><p id="8235ad25-f4d1-4fbe-9092-f0f2c272c163" class="">(六)响应您的上述请求</p><p id="96e46ab6-71f2-41bc-a91e-2c5056715ba0" class="">您可以通过手机“设置”功能选择关闭您希望关闭的权限。</p><p id="415426f2-33d6-4fa8-a135-78aa4e4d3adb" class="">您还可以通过点击“我的”-“关于我们”-“联系客服”后拨打电话，通过联系客服进行个人信息查询、个人信息更正、个人信息删除、用户账户注销、撤回已同意的授权的用户操作，为保障安全，您可能需要提供书面请求，或以其他方式证明您的身份。我们可能会先要求您验证自己的身份，然后再处理您的请求。</p><p id="a8fd4b2f-0a94-4190-9040-8d052a4cc1c6" class="">我们将在十五个工作日内作出答复。若您不满意，还可以通过与客服联系进行申诉。</p><p id="9a5392a7-ec39-405b-9a4a-1f70eef6981b" class="">六、我们如何处理儿童的个人信息</p><p id="9f687724-c501-4c14-a452-61f37ed6314c" class="">我们的产品、网站和服务主要面向成人。我们重视儿童未成年人的个人信息保护，若您为未满18周岁的未成年人，在您使用本平台相关服务之前，您应在您的父母或者其他监护人的监护、指导下共同阅读并同意本隐私政策，并在征得您的监护人同意的前提下使用我们的服务或向我们提供信息。</p><p id="1c5a28dc-246c-4b49-a4db-f764c0cf355d" class="">对于经父母或监护人同意使用我们的产品或服务而收集未成年人个人信息的情况，我们只会在法律法规允许、父母或监护人明确同意或者保护未成年人所必要的情况下使用、共享、转让或披露此信息。如果我们发现在未事先获得可证实的父母同意的情况下收集了未成年人的个人信息，则会尽快删除相关信息。</p><p id="05c9a808-887e-4aa6-8238-b0e56d253a2e" class="">七、您的个人信息如何在全球范围转移</p><p id="ba576830-76dc-42de-8b91-d699b6484019" class="">目前我们不会跨境传输或存储您的个人信息。将来若需跨境传输或存储的，我们会向您告知信息出境的目的、接收方、安全保障措施和安全风险，并征得您的同意。</p><p id="c13da445-1e4a-47f3-9270-5036d0c8d55c" class="">八、本政策如何更新</p><p id="35c7ff86-41f7-46dc-81e8-6a6e4568a9f4" class="">本隐私政策更新后，本平台会在您登录及版本更新时以通知、弹窗、在网站公告形式向您展示变更后的隐私政策与内容，以便您及时了解本隐私政策的最新版本。我们将严格遵循向您披露的隐私政策收集使用规则开展个人信息处理活动，若个人信息使用目的发生变化时会再次征得您的同意，若您继续使用我们的服务，表示同意接受修订后的本政策的内容。</p><p id="dfba8849-9799-4dc9-ab80-317e5cf1f562" class="">九、本政策的适用</p><p id="6414e510-f3b8-4702-b732-b63163a5fba2" class="">本产品的所有服务均适用本政策。</p><p id="54010b4e-cf3b-426f-8307-59f2d2051d7e" class="">当您在首次登陆本产品时，我们会提示您进行阅读本政策，并征得您的同意。除非另有约定或者法律规定，本隐私政策不适用于本产品登记著作权人链接到其他第三方的产品或服务，您使用这些第三方服务（包括您向这些第三方提供的任何个人信息），将受这些第三方的服务条款及隐私政策约束（而非本隐私政策），具体规定请您仔细阅读第三方的条款。请您妥善保护自己的个人信息，仅在必要的情况下向第三方提供。</p><p id="2e43dcb0-306a-4f15-9986-70fa6904e4fe" class="">十、争议管辖</p><p id="1cbc5a59-1fd0-44c9-be86-5b1f1eac7660" class="">本隐私政策的成立、生效、履行、解释及纠纷解决，适用中华人民共和国大陆地区法律。</p><p id="f6c52937-6344-4805-808c-6007fed01a0b" class="">若您和我们发生任何纠纷或争议，首先应友好协商解决；协商不成的，均提请北京仲裁委员会按照其仲裁规则进行仲裁。仲裁裁决是终局的，对双方均有约束力。</p><p id="7f3ce11d-99cd-4e23-a25e-8118bbd01682" class="">十一、关于我们</p><p id="e99b645d-2f28-4e44-bb1a-78d4785d6403" class="">app名称：Talk短剧</p><p id="d9b0c7a5-3ffa-4c90-a4ef-05028407948c" class="">个人信息保护相关负责人联系方式：</p><p id="55ab7f45-2d49-411d-8789-fc799d050e40" class="">客服电子邮件：<a href="mailto:qinquan@xiaohongshu.com">TalkGF@163.com</a></p><p id="28ad85e3-4368-4a87-9791-cc5d5dbb6113" class="">您在产品使用的过程中及对本隐私政策有任何疑问、意见和建议的，均可通过以上联系方式与我们联系。</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
+</style></head><body><article id="d312a98f-802f-4f60-a66e-17fe05ae1927" class="page sans"><header><h1 class="page-title" dir="auto">隐私政策</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><p id="c4649889-8c07-42c1-8040-1eb91c9f83c4" class="">本隐私政策（简称本政策）于2023年03月15日起发布并生效，于2023年04月10日最新修订，本政策由Talk短剧app发布（以下简称“我们”）与用户（又称“您”）就客户端产品Talk短剧（以下简称“本产品”）的隐私保护相关事项所订立的有效合约。您通过点击确认本协议或以其他方式选择接受本协议，即表示您与我们达成协议并同意接受本政策的全部以下约定内容。</p></div><div style="display:contents" dir="auto"><p id="d8f00577-3f08-46d1-bbf5-2692762c3173" class="">【Talk短剧app】系本产品的登记著作权人，依法享有本产品的著作权。</p></div><div style="display:contents" dir="auto"><p id="648cf422-711d-4a83-9773-58b0ab1d29be" class="">本产品由Talk短剧app运营向您提供服务并对您依法享有权利、履行义务、承担法律责任。</p></div><div style="display:contents" dir="auto"><p id="abdc6832-68fa-4888-a488-bceb62035490" class="">本政策将帮助您了解以下内容：</p></div><div style="display:contents" dir="auto"><p id="f38fcb6e-acca-4026-9fbc-e30db9e94100" class="">1、我们如何收集和使用您的个人信息</p></div><div style="display:contents" dir="auto"><p id="e0b003e4-eb90-4b57-ab66-8b462bac693f" class="">2、我们如何使用Cookie和同类技术</p></div><div style="display:contents" dir="auto"><p id="7ee11842-826f-4189-8a17-4521b6c25afe" class="">3、我们如何共享、转让、公开披露您的个人信息</p></div><div style="display:contents" dir="auto"><p id="bd3e6e20-3f90-4fee-8fdd-6e81afc0e3ed" class="">4、我们如何保护您的个人信息</p></div><div style="display:contents" dir="auto"><p id="e5dc19f1-bd2d-4a25-b685-8a7cb2cc8997" class="">5、您的权利</p></div><div style="display:contents" dir="auto"><p id="7cfaad7e-4301-4aa6-8392-9d55e7bc1ef8" class="">6、我们如何处理儿童的个人信息</p></div><div style="display:contents" dir="auto"><p id="082d9fd7-db39-4d40-972d-f63d13c8806b" class="">7、您的个人信息如何在全球范围转移</p></div><div style="display:contents" dir="auto"><p id="b9512151-946c-4b01-b5a8-cf43e91fd8ae" class="">8、本政策如何更新</p></div><div style="display:contents" dir="auto"><p id="22e02696-6f41-4e88-b8a2-11a0e7bb7559" class="">9、本政策的适用</p></div><div style="display:contents" dir="auto"><p id="db4f65f4-34d2-4427-be64-d6da0ce25102" class="">10、争议解决</p></div><div style="display:contents" dir="auto"><p id="31b83d07-5713-4388-8771-5928e701ab0e" class="">11、联系我们</p></div><div style="display:contents" dir="auto"><p id="48c1c3f3-84a8-4807-8ba1-ec7b758774f4" class="">本产品登记著作权人非常重视个人信息的保护。您在使用我们的产品或服务时，我们可能会收集和使用您的相关信息。一旦您选择使用我们的产品或服务，即表示您认可并接受本条款现有内容及其可能随时更新的内容。如果您不同意，应当终止使用本产品的服务。请您在使用我们的产品前，仔细阅读并了解本《隐私政策》。</p></div><div style="display:contents" dir="auto"><p id="b5ae4d78-4ac2-4567-b42c-391f32d8f254" class="">一、我们如何收集和使用您的个人信息</p></div><div style="display:contents" dir="auto"><p id="8c7c4765-8036-4484-9b5e-f90989c0ef67" class="">个人信息是指以电子或者其他方式记录的能够单独或者与其他信息结合识别特定自然人身份或者反映特定自然人活动情况的各种信息。</p></div><div style="display:contents" dir="auto"><p id="ac355ed2-32cf-4c10-899d-722802a09cf9" class="">本产品登记著作权人仅会出于本政策所述的以下目的、方式、范围在为您提供服务时收集和使用您的个人信息：</p></div><div style="display:contents" dir="auto"><p id="59c28107-003c-4d3b-8b3b-4918713bbada" class="">1、应用功能一：成为注册用户</p></div><div style="display:contents" dir="auto"><p id="27178d74-b9cf-4354-975b-65c192596444" class="">您在申请成为本产品注册用户时，您需提供以下信息：您的设备信息。</p></div><div style="display:contents" dir="auto"><p id="204ab722-c5c2-4f0f-89ca-131dfb95b350" class="">您提供的上述信息，授权我们在为您使用本服务期间持续使用。在您注销账号时，我们将停止使用并删除上述信息。</p></div><div style="display:contents" dir="auto"><p id="5328c66a-4028-40ca-9533-830f6f5014cd" class="">2、应用功能二：应用内展示操作日志</p></div><div style="display:contents" dir="auto"><p id="8040ac8d-4317-4ff8-978e-f4bf616d520c" class="">您使用我们服务时，本产品会记录您的操作日志，包括浏览点击记录、添加追剧、看过的剧集、参与过的活动。您提供的上述信息，授权我们在为您使用本服务期间持续使用。在您注销账号时，我们将停止使用并删除上述信息。</p></div><div style="display:contents" dir="auto"><p id="48a9927f-8ed4-4bfb-aa2a-666084803ea7" class="">3、应用功能三：订购与支付</p></div><div style="display:contents" dir="auto"><p id="d8169ea2-53d9-4170-9689-3e856ec9e57b" class="">您使用本产品时，订购VIP会员、剧集付费服务时产生的记录，包括订购记录、消费记录，这些信息会存储于我们的服务器中。以上信息为产品功能必须的信息，若您不同意我们记录前述信息，我们将无法为您提供剧集购买服务。</p></div><div style="display:contents" dir="auto"><p id="43ae2853-e421-4bc6-9711-2e7c39561c1c" class="">4、应用功能四：安全服务</p></div><div style="display:contents" dir="auto"><p id="55a4c342-3c6a-41ce-bbe0-5b726f7a8e83" class="">为向您提供安全稳定的服务、保障您的账户财产安全、预防冒名登陆，为了正常使用本产品功能及服务，当您使用我们的产品或服务时，我们可能会自动记录某些信息，包括：设备或软件信息：您的移动设备、网页浏览器或用于接入我们服务的其他程序所提供的配置信息、您的IP地址、移动设备所用的软件版本信息、设备识别码（IMEI、MAC地址）、设备唯一标识（AndroidID、OAID）信息、设备序列号。若您不同意我们记录前述信息，可能无法完成风控流程而无法使用我们的产品。我们还可能会自动记录您是否安装支付宝APP，若您不同意我们记录前述信息，将不会影响您正常使用本产品。</p></div><div style="display:contents" dir="auto"><p id="1abf99dd-3af6-4c1f-a1e5-24f588fc281b" class="">5、应用功能五：权限启用</p></div><div style="display:contents" dir="auto"><p id="c4787496-d0be-4e1a-bcb3-b48e2e69afac" class="">我们承诺决不超范围、超频次搜集您的个人信息，决不搜集与使用本产品服务非必需或无合理应用场景的信息。</p></div><div style="display:contents" dir="auto"><p id="35f3d845-60fc-479e-85c1-53142a8043cd" class="">您在使用本产品时，为提供给您服务之目的，本产品可能在您使用该应用某些场景下向您申请终端设备的以下权限，当然您可以拒绝开启以下权限，或在手机的设置中关闭本产品的以下权限，关闭以下权限不会影响您对本产品其他功能的使用：</p></div><div style="display:contents" dir="auto"><p id="ca68e4f3-20fa-43ff-9ec4-e07533510d2d" class="">访问电话：通过获取您的电话状态权限我们记录您的设备识别码（即IMEI或IMSI码）进行匿名化处理，用于统计及安全校验；</p></div><div style="display:contents" dir="auto"><p id="088218d4-de20-4bb1-8700-ea098b217d0d" class="">访问本地存储：通过开启本地存储权限，将本产品内的剧集下载到您的手机存储；</p></div><div style="display:contents" dir="auto"><p id="b1c182e9-06ae-4bac-850c-c91c16ec2ff4" class="">访问照片：您可以直接选择手机内的照片或图片进行上传或与客服沟通时提供证明；</p></div><div style="display:contents" dir="auto"><p id="a74958d4-3e30-4c70-9131-b42230b40c7c" class="">访问您设备上的媒体内容和文件：用于读写剧集封面、活动图片的缓存，提升应用使用流畅度。</p></div><div style="display:contents" dir="auto"><p id="d69f177c-04bc-4d9f-b3b5-d212046c798d" class="">开启无线数据：您可以通过连接无线网络或蜂窝网络来实现本产品需要的联网功能；</p></div><div style="display:contents" dir="auto"><p id="2c79d212-26e4-4a5c-829c-2c68cb1ae16e" class="">访问安装程序列表：通过获取您的安装程序列表我们可以确认您是否安装了我们所推广的产品，以便我们及时向您发放相应奖励。</p></div><div style="display:contents" dir="auto"><p id="9800f1ef-91cb-465f-b7ce-5395b9403f99" class="">使用剪切板：您可以复制并粘贴客服电话，也可以选择不使用剪切板权限。</p></div><div style="display:contents" dir="auto"><p id="cb97dddb-5276-4d5c-b2e8-5065936f31c0" class="">为使用词典、百科、语音朗读之目的获取设备网络权限；</p></div><div style="display:contents" dir="auto"><p id="c87732ec-885b-4c1c-bb4a-3ede0d3adb59" class="">二、我们如何使用Cookie和同类技术</p></div><div style="display:contents" dir="auto"><p id="4cfc1f4e-9311-4535-ab0b-5aeb0532d0f4" class="">Cookie和同类技术是互联网中的通用常用技术。为确保本平台正常运转、使您获得更轻松的访问体验，我们可能会在您的移动设备上存储名为Cookie的小数据文件。Cookie通常包含标识符、站点名称以及一些号码和字符。借助于Cookie我们将记录您的登陆信息及在本产品中的操作信息，以便我们存储您的使用习惯，并帮助判断您的账户安全状态，以为您提供更轻松的用户体验和服务。</p></div><div style="display:contents" dir="auto"><p id="8defc9db-b2ac-4964-8e3c-346ff04f7b0f" class="">我们不会将Cookie用于本政策所述目的之外的任何用途。您可根据自己的偏好管理或停用Cookie。有关详情，请参AboutCookies.org。如果停用Cookie，您有可能无法享受最佳的服务体验，我们的推荐内容与您的相关性也会降低。</p></div><div style="display:contents" dir="auto"><p id="e208584e-6c11-4a77-a259-d06a29c86522" class="">三、我们如何共享、转让、公开披露您的个人信息</p></div><div style="display:contents" dir="auto"><p id="a08d5f00-4406-4e95-b961-24effe99f40b" class="">(一)共享</p></div><div style="display:contents" dir="auto"><p id="fa799582-14b8-4f0b-83cc-4910a67c284b" class="">我们不会将您的个人信息向本产品登记著作权人及关联公司以外的任何公司、组织和个人共享，但以下情况除外：</p></div><div style="display:contents" dir="auto"><p id="0786c7db-1cdb-45c5-a7a6-8e295cf5a77b" class="">1、在获取明确同意的情况下共享：在获得您的明确同意后，我们会与其他方共享您的个人信息。</p></div><div style="display:contents" dir="auto"><p id="a033efd3-c34b-402d-8f5d-000130140233" class="">2、我们可能会根据法律法规规定，或按政府主管部门的强制性规定，对外共享您的个人信息。</p></div><div style="display:contents" dir="auto"><p id="810167d5-a614-46c5-a280-f67e4c0ec049" class="">3、与授权合作伙伴共享：仅为实现本政策中声明的目的，我们的某些服务将由授权合作伙伴提供。我们可能会与合作伙伴共享您的某些个人信息，以提供更好的客户服务和用户体验。我们仅会出于合法、正当、必要、特定、明确的目的共享您的个人信息，并且只会共享提供服务所必要的个人信息。我们的合作伙伴无权将共享的个人信息用于任何其他用途。</p></div><div style="display:contents" dir="auto"><p id="51437baf-05c7-4692-baca-c765545e84b7" class="">目前，我们的授权合作伙伴包括以下几大类型：</p></div><div style="display:contents" dir="auto"><p id="2e45001d-db41-4c9e-ad32-16fa301cf9b2" class="">1）供应商、服务提供商和第三方代理及其他合作伙伴。我们将信息发送给在全球范围内支持我们业务的供应商、服务提供商、第三方代理和其他合作伙伴，这些支持包括提供技术基础设施服务、分析我们服务的使用方式、衡量服务的有效性、提供客户服务、支付便利或进行学术研究和调查。在经您事先明确同意后，我们可能会在采取加密、匿名化处理手段后与第三方代理分享您的消费记录、订阅记录，充值记录、订单记录、已删除观看记录、消耗活动消费记录，若您不同意我们分享前述信息，将不会影响您正常使用本产品。</p></div><div style="display:contents" dir="auto"><p id="9dc7402c-eb77-4b47-9f96-c9d40ed144b6" class="">2）分析服务类的数据服务商：为了向您提供更优质的服务，我们与包括友盟+在内第三方数据服务商合作预测您的特征偏好。为了保障您的数据安全，该种预测以指数分值的方式提供，数据分析在严格去标识化安全措施前提下进行，不会泄露您的个人信息。</p></div><div style="display:contents" dir="auto"><p id="75ce43c9-8af7-43bc-a8d3-7a5bab5fa501" class="">3）广告、分析服务类的授权合作伙伴。除非得到您的许可，否则我们不会将您的个人身份信息(指可以识别您身份的信息，通过这些信息可以联系到您或识别您的身份)与提供广告、分析服务的合作伙伴分享。但我们可能会将您的以下个人信息在匿名化处理后与广告、分析服务类的授权合作伙伴共享，包括：网路身份识别信息（IP地址）、软件版本号、软件包名、软件安装列表、设备连接信息（电信运营商、网络环境）、设备属性信息（设备产商、设备型号、操作系统版本、IMEI、OAID、IMSI、传感器、设备序列号），以帮助其在不识别您的个人的前提下提升广告有效触达率。</p></div><div style="display:contents" dir="auto"><p id="ff4936d6-bc29-4a61-a021-6215163db560" class="">第三方SDK接入服务所需开通的权限。我们的产品和服务可能包括第三方的产品和服务，以及第三方网站的链接。当您使用这些产品或服务时，也可能收集您的信息，经用户已同意授权后，会向第三方发送个人信息，第三方身份变更时，会以弹窗方式再次征得用户同意，我们向第三方共享的个人信息，目前我们接入的第三方SDK列明如下：</p></div><div style="display:contents" dir="auto"><p id="46867234-2fd2-457e-97ea-478888d0308b" class="">SDK名称 场景描述 个人信息字段 隐私政策链接 包名 第三方机构名称</p></div><div style="display:contents" dir="auto"><p id="0b5b14bb-38b3-4a56-84c9-148a1c350705" class="">优量汇 广告投放 访问互联网、获取手机状态（Android10以下获取手机IMEI的权限）、OAID、AndroidID、读写外部存储设备、获取手机wifi和网络状态、WIFI的SSID名称、安装应用、位置信息、加速度传感器、陀螺仪传感器、重力传感器，访问程序安装列表权限；内嵌第三方SDK：MMA 中国广告监测通用SDK（设备硬件信息：硬件类型（机型）、屏幕尺寸、IMEI、MAC、AAID、OAID；设备系统信息：操作系统类型、操作系统版本；设备网络信息：WIFI信息（名称、BSSID；设备定位信息：经纬度） https://www.tencent.com/zh-cn/privacy-policy.html com.qq.e 腾讯科技（北京）有限公司</p></div><div style="display:contents" dir="auto"><p id="dd834318-831a-40b8-934b-b949060bb562" class="">穿山甲 广告投放 访问互联网、获取手机状态（Android10以下获取手机IMEI的权限）、OAID、AndroidID、读写外部存储设备、获取手机wifi和网络状态、WIFI的SSID名称、安装应用、位置信息、加速度传感器、陀螺仪传感器、重力传感器，访问程序安装列表权限；内嵌第三方SDK：MMA 中国广告监测通用SDK（设备硬件信息：硬件类型（机型）、屏幕尺寸、IMEI、MAC、AAID、OAID；设备系统信息：操作系统类型、操作系统版本；设备网络信息：WIFI信息（名称、BSSID；设备定位信息：经纬度） <a href="https://www.csjplatform.com/supportcenter/5374">https://www.csjplatform.com/supportcenter/5374</a></p></div><div style="display:contents" dir="auto"><p id="7c023d65-3eb9-4dc4-8b2e-4098d9b58d2a" class="">(二)转让</p></div><div style="display:contents" dir="auto"><p id="329310ff-c841-4cae-95b3-6882c6a224b3" class="">我们不会将您的个人信息转让给任何公司、组织和个人，但以下情况除外：</p></div><div style="display:contents" dir="auto"><p id="fc6ab200-53fd-4635-b70c-4fa92ce10560" class="">1、在获取明确同意的情况下转让：获得您的明确同意后，我们会向其他方转让您的个人信息；</p></div><div style="display:contents" dir="auto"><p id="ebcf9541-3b4a-43ef-9875-8787cf8cca21" class="">2、在涉及合并、收购或破产清算时，若涉及到个人信息转让，我们会在要求新的持有您个人信息的公司、组织继续受此隐私政策的约束，否则我们将要求该公司、组织重新向您征求授权同意。</p></div><div style="display:contents" dir="auto"><p id="1409a304-3aaa-4087-9b2a-72ab23ebd8ca" class="">(三)公开披露</p></div><div style="display:contents" dir="auto"><p id="301ee2c8-2bba-4d75-a885-ceda4bbfea4a" class="">我们仅会在以下情况下，公开披露您的个人信息：</p></div><div style="display:contents" dir="auto"><p id="f8dede23-dc7f-433a-98df-7be4c2a916a7" class="">1、获得您明确同意后；</p></div><div style="display:contents" dir="auto"><p id="76b3aee3-4c37-4382-a12b-f0b68d5aaa14" class="">2、基于法律的披露：在法律、法律程序、诉讼或政府主管部门强制性要求的情况下，我们可能会公开披露您的个人信息。</p></div><div style="display:contents" dir="auto"><p id="16a79bf7-1c94-435a-b1b0-1805cc740e98" class="">(四)对外共享可能涉及的个人信息类型：设备识别码、产品版本信息；对外公开披露可能涉及的个人信息类型：观看剧集、观看时长。</p></div><div style="display:contents" dir="auto"><p id="ebdf8a2d-e7dd-42f6-96ee-44cf34531d36" class="">我们已知晓对外共享、转让、公开披露个人信息所承担的相应法律责任，并将采取合理措施保障个人信息安全。</p></div><div style="display:contents" dir="auto"><p id="fda2dbc1-a0fe-43fa-b4a0-33b3c7edb0b0" class="">四、我们如何保护和保存您的个人信息</p></div><div style="display:contents" dir="auto"><p id="18001180-674f-41d2-aa76-f41ac4055060" class="">（一）技术保护措施</p></div><div style="display:contents" dir="auto"><p id="5013979f-0602-43f3-8f95-1e2253c85b63" class="">我们非常重视您个人信息的安全，将努力采取各种符合业界标准的合理的安全措施来保护您的信息，使您的信息不会被泄漏、毁损或者丢失，包括但不限于SSL、隐私信息加密存储、数据中心的访问控制。我们会使用加密技术提高个人信息的安全性；我们会使用受信赖的保护机制防止个人信息遭到恶意攻击；我们会部署访问控制机制，尽力确保只有授权人员才可访问个人信息。</p></div><div style="display:contents" dir="auto"><p id="9ee308a9-0a6b-4261-8b80-fd334a423613" class="">（二）安全管理体系</p></div><div style="display:contents" dir="auto"><p id="0325ef35-b0f3-4680-b0bb-a6221d225fbc" class="">我们有行业先进的以数据为核心，围绕数据生命周期进行的数据安全管理体系，从组织建设、制度设计、人员管理、产品技术、个人信息安全影响评估方面多维度提升整个系统的安全性。</p></div><div style="display:contents" dir="auto"><p id="a69cea9b-b8cf-4d89-9b2e-ca2b25b9f7e4" class="">我们对可能接触到您的信息的员工或外包人员也采取了严格管理，包括但不限于根据岗位的不同采取不同的权限控制，与他们签署保密协议，监控他们的操作情况措施。</p></div><div style="display:contents" dir="auto"><p id="2f37e063-7238-4602-b190-fdbe9ec4747c" class="">（三）账号保护</p></div><div style="display:contents" dir="auto"><p id="3d99faad-baf7-45ef-a1f1-a54d01053efe" class="">您的账户均有安全保护功能，请妥善保管您的账户及密码信息。如果您发现账号被盗用或个人信息泄露，请及时联系我们，以便我们采取相应措施。</p></div><div style="display:contents" dir="auto"><p id="26dc0b15-eb77-47f7-924e-e61a158d8ddf" class="">（四）信息安全事件处理</p></div><div style="display:contents" dir="auto"><p id="7ea145f4-d840-419e-a003-f820cec1de7c" class="">尽管有前述安全措施，但同时也请您理解在信息网络上不存在“完善的安全措施”。</p></div><div style="display:contents" dir="auto"><p id="c893d2fe-f401-4cc0-a210-3012d640875f" class="">若不幸发生个人信息安全事件，我们将按照法律法规的要求向您告知：安全事件的基本情况和可能的影响、我们已采取或将要采取的处置措施、您可自主防范和降低风险的建议、对您的补救措施。事件相关情况我们将以电话、通知的方式告知您，难以逐一告知个人信息主体时，我们会采取合理、有效的方式发布公告。同时，我们还将按照监管部门要求，上报个人信息安全事件的处置情况。</p></div><div style="display:contents" dir="auto"><p id="e5b9e13a-2cc4-4b00-a66c-409eb15e372b" class="">（五）保存期限</p></div><div style="display:contents" dir="auto"><p id="900b3a19-9adf-42fc-af7e-decb1b46acf9" class="">我们仅在中国大陆地区存放您的个人信息。我们会采取一切合理可行的措施，确保未收集无关的个人信息。我们只会在达成本政策所述目的所需的且法律规定的最短期限内保留您的个人信息，除非需要延长保留期或受到法律的允许。</p></div><div style="display:contents" dir="auto"><p id="183ede5d-5b2d-4bd4-b1c0-ed4c54a2e336" class="">在您的个人信息超出保留期间后，我们会根据法律法规的要求删除您的个人信息、或使其匿名化处理。</p></div><div style="display:contents" dir="auto"><p id="407b1378-2d79-4319-92a9-7f49f5221f37" class="">五、您的权利</p></div><div style="display:contents" dir="auto"><p id="29fd111b-8139-486a-81a1-c7f86b452115" class="">按照中国相关的法律、法规、标准，我们保障您对自己的个人信息行使以下权利：</p></div><div style="display:contents" dir="auto"><p id="84d974c2-4105-4014-ae09-a2e6ce44a74a" class="">(一)访问您的个人信息</p></div><div style="display:contents" dir="auto"><p id="65e18362-9797-48d2-91fe-7fa9e41a7f92" class="">您有权通过用户中心自行访问您的个人信息，可参见（六）我们如何响应您的请求，法律法规规定的例外情况除外</p></div><div style="display:contents" dir="auto"><p id="895ec1ec-40f4-41b5-8b6d-ab283ac6a223" class="">(二)更正您的个人信息</p></div><div style="display:contents" dir="auto"><p id="04e840c4-eec0-4049-9d99-6d33fdc9774c" class="">当您发现我们处理的关于您的个人信息有错误时，您有权要求我们做出更正。如何更正个人信息，可参见（六）我们如何响应您的请求。</p></div><div style="display:contents" dir="auto"><p id="7b2dfbde-d148-46c9-95a4-f6fe9c6d538f" class="">(三)删除您的个人信息 在下述情形中，您可以向我们提出删除个人信息的请求：</p></div><div style="display:contents" dir="auto"><p id="3e9c6348-8d9f-4098-8a51-352e31b93c51" class="">1、我们处理个人信息的行为违反法律法规；</p></div><div style="display:contents" dir="auto"><p id="760700be-c4ac-4f6c-91c9-2bb74d549b92" class="">2、我们收集、使用您的个人信息，却未征得您的同意；</p></div><div style="display:contents" dir="auto"><p id="3d0f347a-d0cf-4259-9657-4acc28f85f5b" class="">3、我们处理个人信息的行为违反了与您的约定；</p></div><div style="display:contents" dir="auto"><p id="bfd27017-8b93-4434-a145-30f1ee7eebd4" class="">4、您不再使用我们的产品或服务，或您注销了账号；</p></div><div style="display:contents" dir="auto"><p id="8a36f641-5196-4de1-86cc-83225703e8ef" class="">5、我们不再为您提供产品或服务。</p></div><div style="display:contents" dir="auto"><p id="f004b50a-fb03-48aa-998d-e2b3ac95b5d4" class="">如何删除个人信息，可参见（六）我们如何响应您的请求，若我们决定遵循您的请求，我们还将同时通知从我们获得您的个人信息的实体要求其及时删除，除非法律法规另有规定，或这些实体获得您的独立授权。</p></div><div style="display:contents" dir="auto"><p id="1f236f35-e0e4-429c-b2a8-1957c15b1f97" class="">当您从我们的服务中删除信息后，我们可能不会立即在备份系统中删除相应的信息，但会在备份更新时删除这些信息。</p></div><div style="display:contents" dir="auto"><p id="516c75e0-3b71-47df-bc89-d53d3f1e3b8b" class="">(四)撤回同意、关闭使用功能</p></div><div style="display:contents" dir="auto"><p id="ed159a1c-ded2-4615-863d-337d0cfb2820" class="">您可以通过关闭设备功能改变您授权我们继续收集个人信息的范围或撤回您的授权。您还可以通过注销账户的方式，撤回我们继续收集您个人信息的全部授权。如何撤回同意、关闭使用功能，可参见（六）我们如何响应您的请求</p></div><div style="display:contents" dir="auto"><p id="213abc12-044b-4bdb-96a2-1254eb4ef6fb" class="">(五)注销账户</p></div><div style="display:contents" dir="auto"><p id="b7de92eb-e31d-4a9f-b86d-ec711d96b85b" class="">您可以在“我的”-“系统设置”-“注销账号”中进行注销账户操作。您随时可注销此前注册的账户，详见《注销须知》。</p></div><div style="display:contents" dir="auto"><p id="fdb84cad-312f-4a2a-af04-33b0a51ad578" class="">在注销账户之后，我们将停止为您提供产品或服务，并删除您的个人信息，法律法规另有规定的除外。</p></div><div style="display:contents" dir="auto"><p id="e3dc7eae-da72-42f6-a9bc-2369adce2c87" class="">在以下情形中，按照法律法规要求，我们将无法遵循您的个人信息删除请求：</p></div><div style="display:contents" dir="auto"><p id="25ce675e-eaee-4c8b-ad7d-1a610d7db1dd" class="">1、与国家安全、国防安全直接相关的；</p></div><div style="display:contents" dir="auto"><p id="d7f80d8d-20fb-4106-a20a-29219107c123" class="">2、与公共安全、公共卫生、重大公共利益直接相关的；</p></div><div style="display:contents" dir="auto"><p id="dc60ab3a-a03c-48c1-b537-c45720fece7a" class="">3、与犯罪侦查、起诉、审判和判决执行直接相关的；</p></div><div style="display:contents" dir="auto"><p id="9b06b08c-4032-4da4-87d9-fce1a6265c8a" class="">4、有充分证据表明您存在主观恶意或滥用权利的；</p></div><div style="display:contents" dir="auto"><p id="f1454e79-0a84-4f43-859d-8b8afc9d8a38" class="">5、响应您的请求将导致您或其他个人、组织的合法权益受到严重损害的；</p></div><div style="display:contents" dir="auto"><p id="a081c793-5229-4017-b11f-a4d55378f09a" class="">6、涉及商业秘密的。</p></div><div style="display:contents" dir="auto"><p id="8235ad25-f4d1-4fbe-9092-f0f2c272c163" class="">(六)响应您的上述请求</p></div><div style="display:contents" dir="auto"><p id="96e46ab6-71f2-41bc-a91e-2c5056715ba0" class="">您可以通过手机“设置”功能选择关闭您希望关闭的权限。</p></div><div style="display:contents" dir="auto"><p id="415426f2-33d6-4fa8-a135-78aa4e4d3adb" class="">您还可以通过点击“我的”-“关于我们”-“联系客服”后拨打电话，通过联系客服进行个人信息查询、个人信息更正、个人信息删除、用户账户注销、撤回已同意的授权的用户操作，为保障安全，您可能需要提供书面请求，或以其他方式证明您的身份。我们可能会先要求您验证自己的身份，然后再处理您的请求。</p></div><div style="display:contents" dir="auto"><p id="a8fd4b2f-0a94-4190-9040-8d052a4cc1c6" class="">我们将在十五个工作日内作出答复。若您不满意，还可以通过与客服联系进行申诉。</p></div><div style="display:contents" dir="auto"><p id="9a5392a7-ec39-405b-9a4a-1f70eef6981b" class="">六、我们如何处理儿童的个人信息</p></div><div style="display:contents" dir="auto"><p id="9f687724-c501-4c14-a452-61f37ed6314c" class="">我们的产品、网站和服务主要面向成人。我们重视儿童未成年人的个人信息保护，若您为未满18周岁的未成年人，在您使用本平台相关服务之前，您应在您的父母或者其他监护人的监护、指导下共同阅读并同意本隐私政策，并在征得您的监护人同意的前提下使用我们的服务或向我们提供信息。</p></div><div style="display:contents" dir="auto"><p id="1c5a28dc-246c-4b49-a4db-f764c0cf355d" class="">对于经父母或监护人同意使用我们的产品或服务而收集未成年人个人信息的情况，我们只会在法律法规允许、父母或监护人明确同意或者保护未成年人所必要的情况下使用、共享、转让或披露此信息。如果我们发现在未事先获得可证实的父母同意的情况下收集了未成年人的个人信息，则会尽快删除相关信息。</p></div><div style="display:contents" dir="auto"><p id="05c9a808-887e-4aa6-8238-b0e56d253a2e" class="">七、您的个人信息如何在全球范围转移</p></div><div style="display:contents" dir="auto"><p id="ba576830-76dc-42de-8b91-d699b6484019" class="">目前我们不会跨境传输或存储您的个人信息。将来若需跨境传输或存储的，我们会向您告知信息出境的目的、接收方、安全保障措施和安全风险，并征得您的同意。</p></div><div style="display:contents" dir="auto"><p id="c13da445-1e4a-47f3-9270-5036d0c8d55c" class="">八、本政策如何更新</p></div><div style="display:contents" dir="auto"><p id="35c7ff86-41f7-46dc-81e8-6a6e4568a9f4" class="">本隐私政策更新后，本平台会在您登录及版本更新时以通知、弹窗、在网站公告形式向您展示变更后的隐私政策与内容，以便您及时了解本隐私政策的最新版本。我们将严格遵循向您披露的隐私政策收集使用规则开展个人信息处理活动，若个人信息使用目的发生变化时会再次征得您的同意，若您继续使用我们的服务，表示同意接受修订后的本政策的内容。</p></div><div style="display:contents" dir="auto"><p id="dfba8849-9799-4dc9-ab80-317e5cf1f562" class="">九、本政策的适用</p></div><div style="display:contents" dir="auto"><p id="6414e510-f3b8-4702-b732-b63163a5fba2" class="">本产品的所有服务均适用本政策。</p></div><div style="display:contents" dir="auto"><p id="54010b4e-cf3b-426f-8307-59f2d2051d7e" class="">当您在首次登陆本产品时，我们会提示您进行阅读本政策，并征得您的同意。除非另有约定或者法律规定，本隐私政策不适用于本产品登记著作权人链接到其他第三方的产品或服务，您使用这些第三方服务（包括您向这些第三方提供的任何个人信息），将受这些第三方的服务条款及隐私政策约束（而非本隐私政策），具体规定请您仔细阅读第三方的条款。请您妥善保护自己的个人信息，仅在必要的情况下向第三方提供。</p></div><div style="display:contents" dir="auto"><p id="2e43dcb0-306a-4f15-9986-70fa6904e4fe" class="">十、争议管辖</p></div><div style="display:contents" dir="auto"><p id="1cbc5a59-1fd0-44c9-be86-5b1f1eac7660" class="">本隐私政策的成立、生效、履行、解释及纠纷解决，适用中华人民共和国大陆地区法律。</p></div><div style="display:contents" dir="auto"><p id="f6c52937-6344-4805-808c-6007fed01a0b" class="">若您和我们发生任何纠纷或争议，首先应友好协商解决；协商不成的，均提请北京仲裁委员会按照其仲裁规则进行仲裁。仲裁裁决是终局的，对双方均有约束力。</p></div><div style="display:contents" dir="auto"><p id="7f3ce11d-99cd-4e23-a25e-8118bbd01682" class="">十一、如何联系我们</p></div><div style="display:contents" dir="auto"><p id="e99b645d-2f28-4e44-bb1a-78d4785d6403" class="">我们设立了个人信息保护专职部门，将按照本政策保护您的个人信息。如您有关于个人信息保护的投诉和举报，或您对本政策、Talk国际短视频的隐私措施、您的信息的相关事宜有任何问题、意见或建议，请与Talk国际短视频的个人信息保护工作人员联系。</p></div><div style="display:contents" dir="auto"><p id="2d94d123-d0b6-8051-b8b4-d8e96ce7efd9" class="">公司名称：山东恒信达信息技术有限公司</p></div><div style="display:contents" dir="auto"><p id="2d94d123-d0b6-8083-91d4-c5a70fd16c02" class="">地址：中国（山东）自由贸易试验区济南片区港沟街道凤歧路4339号院内北侧办公楼1号楼209室</p></div><div style="display:contents" dir="auto"><p id="2d94d123-d0b6-80ec-b615-cd13861a7eed" class="">负责人：王经理 15589946701</p></div><div style="display:contents" dir="auto"><p id="2d94d123-d0b6-80ee-b88c-d73504ed1dd0" class="">一般情况下，我们将在收到您的问题、意见或建议，并验证您的用户身份后的1-3个工作内予以回复。</p></div><div style="display:contents" dir="auto"><p id="2d94d123-d0b6-8030-aadb-c8fa500bcfaa" class="">本产品服务提供者是山东恒信达信息技术有限公司</p></div><div style="display:contents" dir="auto"><p id="28ad85e3-4368-4a87-9791-cc5d5dbb6113" class="">您在产品使用的过程中及对本隐私政策有任何疑问、意见和建议的，均可通过以上联系方式与我们联系。</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
